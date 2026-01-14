@@ -1,0 +1,22 @@
+{
+    "id": "triangle",
+    "name": "Triangle",
+    "name_suffix_1": null,
+    "name_suffix_2": null,
+    "other_names": null,
+    "summary": "A chockehold that encircles their neck and one arm.",
+    "types": [
+        201
+    ],
+    "difficulty": 0,
+    "is_counter": false,
+    "requires_gi": false,
+    "ranking": 0,
+    "is_searchable": true,
+    "parent": null,
+    "inverse": null,
+    "followups": [],
+    "preceding": [],
+    "concepts": [],
+    "content": []
+}
