@@ -1,0 +1,21 @@
+{
+    "id": "sidecontrol.bottom",
+    "name": "Side control",
+    "name_suffix_1": "bottom",
+    "name_suffix_2": null,
+    "other_names": "Side mount",
+    "summary": "With your back to the ground, have them lay their chest on top of yours so that your bodies are perpendicular.",
+    "types": [
+        100
+    ],
+    "difficulty": 0,
+    "requires_gi": false,
+    "ranking": 998,
+    "is_searchable": true,
+    "parent": null,
+    "inverse": "sidecontrol.top",
+    "followups": [],
+    "defenses": [],
+    "concepts": [],
+    "content": []
+}

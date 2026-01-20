@@ -1,0 +1,21 @@
+{
+    "id": "kimura",
+    "name": "Kimura",
+    "name_suffix_1": null,
+    "name_suffix_2": null,
+    "other_names": "Double wristlock, chicken wing",
+    "summary": "An arm entanglement that isolates the shoulder and elbow joints with the use of a double wrist grip which you can use to create leverage and control.",
+    "types": [
+        900
+    ],
+    "difficulty": 0,
+    "requires_gi": false,
+    "ranking": 900,
+    "is_searchable": true,
+    "parent": null,
+    "inverse": null,
+    "followups": [],
+    "defenses": [],
+    "concepts": [],
+    "content": []
+}

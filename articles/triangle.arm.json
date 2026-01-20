@@ -1,0 +1,21 @@
+{
+    "id": "triangle.arm",
+    "name": "Arm triangle",
+    "name_suffix_1": null,
+    "name_suffix_2": null,
+    "other_names": null,
+    "summary": "A chockehold that encircles their neck and one arm with your arms.",
+    "types": [
+        201
+    ],
+    "difficulty": 0,
+    "requires_gi": false,
+    "ranking": 0,
+    "is_searchable": true,
+    "parent": "triangle",
+    "inverse": null,
+    "followups": [],
+    "defenses": [],
+    "concepts": [],
+    "content": []
+}

@@ -1,0 +1,21 @@
+{
+    "id": "halfguard.bottom",
+    "name": "Half guard",
+    "name_suffix_1": "bottom",
+    "name_suffix_2": null,
+    "other_names": "Half mount",
+    "summary": "With your back to the ground, have them place one of their legs in between yours so that they are entangled.",
+    "types": [
+        100
+    ],
+    "difficulty": 0,
+    "requires_gi": false,
+    "ranking": 997,
+    "is_searchable": true,
+    "parent": null,
+    "inverse": "halfguard.top",
+    "followups": [],
+    "defenses": [],
+    "concepts": [],
+    "content": []
+}

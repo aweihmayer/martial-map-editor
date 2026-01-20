@@ -1,0 +1,21 @@
+{
+    "id": "guillotine",
+    "name": "Guillotine",
+    "name_suffix_1": null,
+    "name_suffix_2": null,
+    "other_names": "Double wristlock, chicken wing",
+    "summary": "A chokehold that involves trapping their head and neck between your arms, typically with one arm under the neck and the other over the top.",
+    "types": [
+        201
+    ],
+    "difficulty": 0,
+    "requires_gi": false,
+    "ranking": 900,
+    "is_searchable": true,
+    "parent": null,
+    "inverse": null,
+    "followups": [],
+    "defenses": [],
+    "concepts": [],
+    "content": []
+}

@@ -1,0 +1,21 @@
+{
+    "id": "mount.bottom",
+    "name": "Mount",
+    "name_suffix_1": "bottom",
+    "name_suffix_2": null,
+    "other_names": "Full mount",
+    "summary": "With your back to the ground, have them sit on top of your torso.",
+    "types": [
+        100
+    ],
+    "difficulty": 0,
+    "requires_gi": false,
+    "ranking": 1000,
+    "is_searchable": true,
+    "parent": null,
+    "inverse": "mount.top",
+    "followups": [],
+    "defenses": [],
+    "concepts": [],
+    "content": []
+}

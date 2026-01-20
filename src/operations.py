@@ -3,82 +3,88 @@ import os
 from pathlib import Path
 from .objects import *
 
-TECHNIQUE_DIRECTORY = Path(__file__).parent.parent / 'techniques'
+ARTICLE_DIRECTORY = Path(__file__).parent.parent / 'articles'
+ID_REGISTRY_FILE = '_ids.json'
 
 def fetch_all_ids() -> list[str]:
-    files = os.listdir(TECHNIQUE_DIRECTORY)
-    return [f.replace('.json', '') for f in files]
+    files = os.listdir(ARTICLE_DIRECTORY)
+    return [f.replace('.json', '') for f in files if f != ID_REGISTRY_FILE]
 
-def fetch(id: str) -> Technique | None:
-    path = TECHNIQUE_DIRECTORY / (id + '.json')
+def fetch(id: str) -> Article | None:
+    path = ARTICLE_DIRECTORY / (id + '.json')
     if not os.path.exists(path): return None
     with open(path, mode='r', encoding='utf-8') as f:
-        return Technique.deserialize(f.read())
+        return Article.deserialize(f.read())
 
 def find(id: str):
-    technique = fetch(id)
-    assert technique
-    return technique
+    article = fetch(id)
+    assert article
+    return article
 
-def create(technique: Technique):
-    assert fetch(technique.id) == None
-    save(technique)
+def create(article: Article):
+    assert fetch(article.id) == None
+    save(article)
 
-def update(technique: Technique):
-    assert find(technique.id)
-    save(technique)
+def update(article: Article):
+    assert find(article.id)
+    save(article)
 
-def save(technique: Technique):
-    path = TECHNIQUE_DIRECTORY / (technique.id + '.json')
+def save(article: Article):
+    path = ARTICLE_DIRECTORY / (article.id + '.json')
     with open(path, mode='w', encoding='utf-8') as f:
-        contents = technique.serialize()
+        contents = article.serialize()
         json.dump(contents, f, indent=4)
-        print(f'Saved {technique.id}')
+        print(f'Saved {article.id}')
 
-def delete(technique: Technique):
-    assert find(technique.id)
-    path = TECHNIQUE_DIRECTORY / (technique.id + '.json')
+def delete(article: Article):
+    assert find(article.id)
+    path = ARTICLE_DIRECTORY / (article.id + '.json')
     os.remove(path)
-    print(f'Deleted {technique.id}')
+    print(f'Deleted {article.id}')
 
 def clean():
     ids = fetch_all_ids()
+
+    # Save id registry file
+    with open(ARTICLE_DIRECTORY / ID_REGISTRY_FILE, mode='w', encoding='utf-8') as f:
+        json.dump(ids, f)
+
     for id in ids:
-        technique = find(id)
+        print('________________________________')
+        print('Cleaning', id)
+        article = find(id)
         
         # Clean parent
-        if technique.parent:
-            other_technique = fetch(technique.parent)
+        if article.parent:
+            other_article = fetch(article.parent)
             # Parent doesn't exist, remove it exists, make sure the inversion is mutual
-            if not other_technique:
-                technique.parent = None
+            if not other_article:
+                print('Parent does not exist, removing parent', article.parent)
+                article.parent = None
 
         # Clean inverse
-        if technique.inverse:
-            other_technique = fetch(technique.inverse)
+        if article.inverse:
+            other_article = fetch(article.inverse)
             # Inverse exists, make sure the inversion is mutual
-            if other_technique:
-                assert not other_technique or other_technique.inverse == technique.id
-                other_technique.inverse = technique.id
-                save(other_technique)
+            if other_article:
+                if not other_article.inverse:
+                    print('Inverse is not mutual, adding inverse on mirror', other_article.inverse)
+                    other_article.inverse = article.id
+                elif other_article.inverse != article.id:
+                    print('Inverse points to another article, error', other_article.id, other_article.inverse)
+                    assert False
             # Inverse doesn't exist, remove it
             else:
-                technique.inverse = None
+                print('Inverse does not exist, removing inverse', article.inverse)
+                article.inverse = None
 
         # Clean follow ups
-        technique.followups = [x for x in technique.followups if fetch(x)]
-        for x in technique.followups:
-            other_technique = find(x)
-            if technique.id in other_technique.preceding: continue
-            other_technique.precending.append(technique.id)
-            save(other_technique)
+        article.followups = [x for x in article.followups if fetch(x)]
 
-        # Clean preceding
-        technique.precending = [x for x in technique.preceding if fetch(x)]
-        for x in technique.preceding:
-            other_technique = find(x)
-            if technique.id in other_technique.followups: continue
-            other_technique.followups.append(technique.id)
-            save(other_technique)
+        # Clean defenses
+        article.followups = [x for x in article.defenses if fetch(x)]
+
+        # Clean concepts
+        article.concepts = [x for x in article.concepts if fetch(x)]
 
 __all__ = ['fetch_all_ids', 'fetch', 'find', 'create', 'update', 'save', 'delete', 'clean']

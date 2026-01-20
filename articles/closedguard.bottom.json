@@ -1,0 +1,21 @@
+{
+    "id": "closedguard.bottom",
+    "name": "Closed guard",
+    "name_suffix_1": "bottom",
+    "name_suffix_2": null,
+    "other_names": "Full guard",
+    "summary": "With your back to the ground and them in between your legs, hook your feet behind their back.",
+    "types": [
+        100
+    ],
+    "difficulty": 0,
+    "requires_gi": false,
+    "ranking": 995,
+    "is_searchable": true,
+    "parent": null,
+    "inverse": "closedguard.top",
+    "followups": ["closedguard.bottom.hipbumpsweep"],
+    "defenses": [],
+    "concepts": [],
+    "content": []
+}

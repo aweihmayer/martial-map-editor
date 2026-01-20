@@ -2,7 +2,7 @@ from enum import IntEnum
 from typing import Any
 import json
 
-class TechniqueDifficulty(IntEnum):
+class ArticleDifficulty(IntEnum):
     UNIVERSAL = 0
     BEGINNER = 10
     NOVICE = 20
@@ -10,7 +10,7 @@ class TechniqueDifficulty(IntEnum):
     ADVANCED = 40
     EXPERT = 50
 
-class TechniqueType(IntEnum):
+class ArticleType(IntEnum):
     # Positions
     POSITION = 100,
     # Submissions
@@ -31,14 +31,14 @@ class TechniqueType(IntEnum):
     # Concepts
     CONCEPT = 900
 
-class TechniqueContentType(IntEnum):
+class ArticleContentType(IntEnum):
     TEXT = 10
     YOUTUBE_VIDEO = 30
     AD = 90
 
-class TechniqueContent:
+class ArticleContent:
     def __init__(self,
-        content_type: TechniqueContentType,
+        content_type: ArticleContentType,
         contents: str,
         title: str | None,
         video_start: int | None
@@ -49,9 +49,9 @@ class TechniqueContent:
         self.video_start = video_start
 
     @staticmethod
-    def deserialize(serialized: str | dict) -> 'TechniqueContent':
+    def deserialize(serialized: str | dict) -> 'ArticleContent':
         if isinstance(serialized, str): serialized = json.loads(serialized)
-        return TechniqueContent(
+        return ArticleContent(
             content_type = serialized['content_type'],
             contents = serialized['contents'],
             title = serialized.get('title', None),
@@ -65,7 +65,7 @@ class TechniqueContent:
         if self.video_start: serialized['video_start_at'] = self.video_start
         return serialized
 
-class Technique:
+class Article:
     def __init__(self,
         id: str,
         name: str,
@@ -73,18 +73,17 @@ class Technique:
         name_suffix_2: str,
         other_names: str,
         summary: str,
-        types: list[TechniqueType],
-        difficulty: TechniqueDifficulty,
-        is_counter: bool,
+        types: list[ArticleType],
+        difficulty: ArticleDifficulty,
         requires_gi: bool,
         ranking: int,
         is_searchable: bool,
         parent: str | None,
         inverse: str | None,
         followups: list[str],
-        preceding: list[str],
+        defenses: list[str],
         concepts: list[str],
-        content: list[TechniqueContent]
+        content: list[ArticleContent]
     ):
         self.id = id
         self.name = name
@@ -94,21 +93,20 @@ class Technique:
         self.summary = summary
         self.types = types
         self.difficulty = difficulty
-        self.is_counter = is_counter
         self.requires_gi = requires_gi
         self.ranking = ranking
         self.is_searchable = is_searchable
         self.parent = parent
         self.inverse = inverse
         self.followups = followups
-        self.preceding = preceding
+        self.defenses = defenses
         self.concepts = concepts
         self.content = content
 
     @staticmethod
-    def deserialize(serialized: str | dict) -> 'Technique':
+    def deserialize(serialized: str | dict) -> 'Article':
         if isinstance(serialized, str): serialized = json.loads(serialized)
-        return Technique(
+        return Article(
             id = serialized['id'],
             name = serialized['name'],
             name_suffix_1 = serialized['name_suffix_1'],
@@ -117,16 +115,15 @@ class Technique:
             summary = serialized['summary'],
             types = serialized['types'],
             difficulty = serialized['difficulty'],
-            is_counter = serialized['is_counter'],
             requires_gi = serialized['requires_gi'],
             ranking = serialized['ranking'],
             is_searchable = serialized['is_searchable'],
             parent = serialized['parent'],
             inverse = serialized['inverse'],
             followups = serialized['followups'],
-            preceding = serialized['preceding'],
+            defenses = serialized['defenses'],
             concepts = serialized['concepts'],
-            content = [TechniqueContent.deserialized(x) for x in serialized['content']])
+            content = [ArticleContent.deserialized(x) for x in serialized['content']])
 
     def serialize(self) -> dict[str, Any]:
         return {
@@ -138,15 +135,14 @@ class Technique:
             'summary': self.summary,
             'types': self.types,
             'difficulty': self.difficulty,
-            'is_counter': self.is_counter,
             'requires_gi': self.requires_gi,
             'ranking': self.ranking,
             'is_searchable': self.is_searchable,
             'parent': self.parent,
             'inverse': self.inverse,
             'followups': self.followups,
-            'preceding': self.preceding,
+            'defenses': self.defenses,
             'concepts': self.concepts,
             'content': [x.serialize() for x in self.content] }
 
-__all__ = ['Technique', 'TechniqueContent', 'TechniqueType', 'TechniqueDifficulty', 'TechniqueContentType']
+__all__ = ['Article', 'ArticleContent', 'ArticleType', 'ArticleDifficulty', 'ArticleContentType']
