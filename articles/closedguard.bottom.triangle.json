@@ -1,0 +1,20 @@
+{
+    "id": "closedguard.bottom.triangle",
+    "name": "Triangle",
+    "name_suffix_1": "in bottom closed guard",
+    "name_suffix_2": null,
+    "other_names": null,
+    "summary": "Isolate one of their arms and with one leg bring your hamstring to their neck and your calf behind their head. Lock the triangle by bringing your other leg on top. Reposition to have a slight angle to help you finish.",
+    "types": [
+        201
+    ],
+    "difficulty": 10,
+    "requires_gi": false,
+    "ranking": 100,
+    "parent": "triangle.leg",
+    "inverse": null,
+    "followups": [],
+    "defenses": [],
+    "concepts": [],
+    "content": []
+}

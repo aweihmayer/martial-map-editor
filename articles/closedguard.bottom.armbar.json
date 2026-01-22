@@ -1,17 +1,17 @@
 {
-    "id": "closedguard.bottom.kimura",
-    "name": "Kimura",
+    "id": "closedguard.bottom.armbar",
+    "name": "Armbar",
     "name_suffix_1": "in bottom closed guard",
     "name_suffix_2": null,
     "other_names": null,
-    "summary": "With their hands on the ground, grab their wrist, sit up towards them, wrap your arm around theirs and grab your own wrist. Fall to the side and bring their arm behind their back.",
+    "summary": "With their arm on your chest, isolate that arm, take an angle and put a leg over their back. Pass your other leg over their head and hyperextend their elbow to finish.",
     "types": [
         202
     ],
     "difficulty": 10,
     "requires_gi": false,
     "ranking": 100,
-    "parent": "kimura",
+    "parent": "armbar",
     "inverse": null,
     "followups": [],
     "defenses": [],

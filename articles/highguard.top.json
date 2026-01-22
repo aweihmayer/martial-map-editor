@@ -1,0 +1,20 @@
+{
+    "id": "highguard.top",
+    "name": "High guard",
+    "name_suffix_1": "top",
+    "name_suffix_2": null,
+    "other_names": null,
+    "summary": "With their back to the ground and you in between their legs, have them hook their feet behind your back with one leg above your shoulder.",
+    "types": [
+        100
+    ],
+    "difficulty": 0,
+    "requires_gi": false,
+    "ranking": 100,
+    "parent": "closedguard.top",
+    "inverse": "highguard.bottom",
+    "followups": [],
+    "defenses": [],
+    "concepts": [],
+    "content": []
+}

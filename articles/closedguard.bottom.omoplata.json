@@ -1,0 +1,21 @@
+{
+    "id": "closedguard.bottom.omoplata",
+    "name": "Omoplata",
+    "name_suffix_1": "in bottom closed guard",
+    "name_suffix_2": null,
+    "other_names": null,
+    "summary": "Grip and isolate one of their arms, create an angle by going parallel to them with one leg over the trapped arm and looking in the same direction as them. Extend your legs and bring your feet to the ground to bring them down.",
+    "types": [
+        202,
+        300
+    ],
+    "difficulty": 10,
+    "requires_gi": false,
+    "ranking": 100,
+    "parent": null,
+    "inverse": null,
+    "followups": [],
+    "defenses": [],
+    "concepts": [],
+    "content": []
+}

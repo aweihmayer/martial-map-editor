@@ -77,7 +77,6 @@ class Article:
         difficulty: ArticleDifficulty,
         requires_gi: bool,
         ranking: int,
-        is_searchable: bool,
         parent: str | None,
         inverse: str | None,
         followups: list[str],
@@ -95,7 +94,6 @@ class Article:
         self.difficulty = difficulty
         self.requires_gi = requires_gi
         self.ranking = ranking
-        self.is_searchable = is_searchable
         self.parent = parent
         self.inverse = inverse
         self.followups = followups
@@ -117,7 +115,6 @@ class Article:
             difficulty = serialized['difficulty'],
             requires_gi = serialized['requires_gi'],
             ranking = serialized['ranking'],
-            is_searchable = serialized['is_searchable'],
             parent = serialized['parent'],
             inverse = serialized['inverse'],
             followups = serialized['followups'],
@@ -137,7 +134,6 @@ class Article:
             'difficulty': self.difficulty,
             'requires_gi': self.requires_gi,
             'ranking': self.ranking,
-            'is_searchable': self.is_searchable,
             'parent': self.parent,
             'inverse': self.inverse,
             'followups': self.followups,

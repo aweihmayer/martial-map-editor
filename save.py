@@ -11,7 +11,6 @@ t = Article(
     difficulty=ArticleDifficulty.UNIVERSAL,
     requires_gi=False,
     ranking=0,
-    is_searchable=True,
     parent=None,
     inverse=None,
     followups=[],

@@ -11,7 +11,6 @@
     "difficulty": 0,
     "requires_gi": false,
     "ranking": 0,
-    "is_searchable": true,
     "parent": null,
     "inverse": null,
     "followups": [],

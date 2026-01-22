@@ -1,0 +1,20 @@
+{
+    "id": "armbar",
+    "name": "Armbar",
+    "name_suffix_1": "in bottom closed guard",
+    "name_suffix_2": null,
+    "other_names": "Armlock",
+    "summary": "A submission that hyperextends the elbow joint.",
+    "types": [
+        202
+    ],
+    "difficulty": 10,
+    "requires_gi": false,
+    "ranking": 100,
+    "parent": null,
+    "inverse": null,
+    "followups": [],
+    "defenses": [],
+    "concepts": [],
+    "content": []
+}

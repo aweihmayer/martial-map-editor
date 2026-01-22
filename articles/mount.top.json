@@ -11,10 +11,11 @@
     "difficulty": 0,
     "requires_gi": false,
     "ranking": 1000,
-    "is_searchable": true,
     "parent": null,
     "inverse": "mount.bottom",
-    "followups": [],
+    "followups": [
+        "mount.top.armbar"
+    ],
     "defenses": [],
     "concepts": [],
     "content": []
