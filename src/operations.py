@@ -50,16 +50,15 @@ def clean():
         json.dump(ids, f)
 
     for id in ids:
-        print('________________________________')
-        print('Cleaning', id)
         article = find(id)
+        article.id = id
         
         # Clean parent
         if article.parent:
             other_article = fetch(article.parent)
             # Parent doesn't exist, remove it exists, make sure the inversion is mutual
             if not other_article:
-                print('Parent does not exist, removing parent', article.parent)
+                print(id, 'Parent does not exist, removing parent', article.parent)
                 article.parent = None
 
         # Clean inverse
@@ -68,23 +67,25 @@ def clean():
             # Inverse exists, make sure the inversion is mutual
             if other_article:
                 if not other_article.inverse:
-                    print('Inverse is not mutual, adding inverse on mirror', other_article.inverse)
+                    print(id, 'Inverse is not mutual, adding inverse on mirror', other_article.inverse)
                     other_article.inverse = article.id
                 elif other_article.inverse != article.id:
-                    print('Inverse points to another article, error', other_article.id, other_article.inverse)
+                    print(id, 'Inverse points to another article, error', other_article.id, other_article.inverse)
                     assert False
             # Inverse doesn't exist, remove it
             else:
-                print('Inverse does not exist, removing inverse', article.inverse)
+                print(id, 'Inverse does not exist, removing inverse', article.inverse)
                 article.inverse = None
 
         # Clean follow ups
         article.followups = [x for x in article.followups if fetch(x)]
 
-        # Clean defenses
-        article.followups = [x for x in article.defenses if fetch(x)]
+        # Clean counters
+        article.counters = [x for x in article.counters if fetch(x)]
 
         # Clean concepts
         article.concepts = [x for x in article.concepts if fetch(x)]
+
+        update(article)
 
 __all__ = ['fetch_all_ids', 'fetch', 'find', 'create', 'update', 'save', 'delete', 'clean']

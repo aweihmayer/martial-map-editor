@@ -14,7 +14,7 @@
     "parent": "closedguard.top",
     "inverse": "highguard.bottom",
     "followups": [],
-    "defenses": [],
+    "counters": [],
     "concepts": [],
     "content": []
 }

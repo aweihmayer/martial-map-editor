@@ -1,0 +1,20 @@
+{
+    "id": "mount.high.top",
+    "name": "High mount",
+    "name_suffix_1": "top",
+    "name_suffix_2": null,
+    "other_names": null,
+    "summary": "With their back to the ground, sit high on top of their torso.",
+    "types": [
+        100
+    ],
+    "difficulty": 0,
+    "requires_gi": false,
+    "ranking": 1000,
+    "parent": "mount.top",
+    "inverse": "mount.high.bottom",
+    "followups": [],
+    "counters": [],
+    "concepts": [],
+    "content": []
+}

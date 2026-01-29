@@ -1,0 +1,20 @@
+{
+    "id": "mount.s.bottom",
+    "name": "S mount",
+    "name_suffix_1": "bottom",
+    "name_suffix_2": null,
+    "other_names": null,
+    "summary": "With your back to the ground, have them sit perpendicularly on top of your chest with their legs forming an S.",
+    "types": [
+        100
+    ],
+    "difficulty": 0,
+    "requires_gi": false,
+    "ranking": 100,
+    "parent": "mount.bottom",
+    "inverse": "mount.s.top",
+    "followups": [],
+    "counters": [],
+    "concepts": [],
+    "content": []
+}

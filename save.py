@@ -14,7 +14,7 @@ t = Article(
     parent=None,
     inverse=None,
     followups=[],
-    defenses=[],
+    counters=[],
     concepts=[],
     content=[]
 )

@@ -80,7 +80,7 @@ class Article:
         parent: str | None,
         inverse: str | None,
         followups: list[str],
-        defenses: list[str],
+        counters: list[str],
         concepts: list[str],
         content: list[ArticleContent]
     ):
@@ -97,7 +97,7 @@ class Article:
         self.parent = parent
         self.inverse = inverse
         self.followups = followups
-        self.defenses = defenses
+        self.counters = counters
         self.concepts = concepts
         self.content = content
 
@@ -118,7 +118,7 @@ class Article:
             parent = serialized['parent'],
             inverse = serialized['inverse'],
             followups = serialized['followups'],
-            defenses = serialized['defenses'],
+            counters = serialized['counters'],
             concepts = serialized['concepts'],
             content = [ArticleContent.deserialized(x) for x in serialized['content']])
 
@@ -137,7 +137,7 @@ class Article:
             'parent': self.parent,
             'inverse': self.inverse,
             'followups': self.followups,
-            'defenses': self.defenses,
+            'counters': self.counters,
             'concepts': self.concepts,
             'content': [x.serialize() for x in self.content] }
 
