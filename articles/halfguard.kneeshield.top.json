@@ -1,0 +1,20 @@
+{
+    "id": "halfguard.kneeshield.top",
+    "name": "Knee shield half guard",
+    "name_suffix_1": "top",
+    "name_suffix_2": null,
+    "other_names": "Z guard",
+    "summary": null,
+    "types": [
+        100
+    ],
+    "difficulty": 0,
+    "requires_gi": false,
+    "ranking": 100,
+    "parent": "halfguard.top",
+    "inverse": "halfguard.kneeshield.bottom",
+    "followups": [],
+    "counters": [],
+    "concepts": [],
+    "content": []
+}

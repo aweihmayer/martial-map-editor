@@ -1,5 +1,5 @@
 {
-    "id": "highguard.bottom",
+    "id": "closedguard.high.bottom",
     "name": "High guard",
     "name_suffix_1": "bottom",
     "name_suffix_2": null,
@@ -12,7 +12,7 @@
     "requires_gi": false,
     "ranking": 100,
     "parent": "closedguard.bottom",
-    "inverse": "highguard.top",
+    "inverse": "closedguard.high.top",
     "followups": [],
     "counters": [],
     "concepts": [],
